@@ -1,0 +1,22 @@
+<h2>Regiones</h2>
+<a href="/regiones/create" class="btn btn-success mb-3">Nueva Región</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each regiones}}
+    <tr>
+      <td>{{this.nombre}}</td>
+      <td>
+        <a href="/regiones/edit/{{this.id}}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="/regiones/delete/{{this.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

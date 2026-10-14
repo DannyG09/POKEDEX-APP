@@ -1,0 +1,28 @@
+<h2>Pokemones</h2>
+<a class="btn btn-success mb-3" href="/pokemones/create">Nuevo Pokémon</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Tipo</th>
+      <th>Región</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each pokemones}}
+    <tr>
+      <td>{{this.nombre}}</td>
+      <td><img src="{{this.imagen}}" width="50"></td>
+      <td>{{this.Tipo.nombre}}</td>
+      <td>{{this.Region.nombre}}</td>
+      <td>
+        <a href="/pokemones/edit/{{this.id}}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="/pokemones/delete/{{this.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

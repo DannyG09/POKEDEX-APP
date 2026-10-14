@@ -1,0 +1,29 @@
+<h2 class="mb-4">Pokédex - Inicio</h2>
+
+<form method="GET" action="/" class="row g-3 mb-4">
+  <div class="col-md-6">
+    <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre..." value="{{nombre}}">
+  </div>
+  <div class="col-md-4">
+    <select name="region" class="form-select">
+      <option value="">-- Filtrar por Región --</option>
+      {{#each regiones}}
+        <option value="{{this.id}}" {{#ifCond ../region '==' this.id}}selected{{/ifCond}}>{{this.nombre}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary w-100">Filtrar</button>
+  </div>
+</form>
+
+<div class="pokemon-container">
+  {{#each pokemones}}
+    <div class="pokemon-card">
+      <img src="{{this.imagen}}" alt="{{this.nombre}}" />
+      <div class="nombre">{{this.nombre}}</div>
+      <div class="tipo"><strong>Tipo:</strong> {{this.Tipo.nombre}}</div>
+      <div class="region"><strong>Región:</strong> {{this.Region.nombre}}</div>
+    </div>
+  {{/each}}
+</div>

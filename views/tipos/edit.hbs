@@ -1,0 +1,9 @@
+<h2>Editar Tipo</h2>
+<form method="POST" action="/tipos/edit/{{tipo.id}}">
+  <div class="mb-3">
+    <label>Nombre:</label>
+    <input name="nombre" class="form-control" value="{{tipo.nombre}}" required>
+  </div>
+  <button class="btn btn-primary">Guardar</button>
+  <a href="/tipos" class="btn btn-secondary">Cancelar</a>
+</form>

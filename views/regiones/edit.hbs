@@ -1,0 +1,9 @@
+<h2>Editar Región</h2>
+<form method="POST" action="/regiones/edit/{{region.id}}">
+  <div class="mb-3">
+    <label>Nombre:</label>
+    <input name="nombre" class="form-control" value="{{region.nombre}}" required>
+  </div>
+  <button class="btn btn-primary">Guardar</button>
+  <a href="/regiones" class="btn btn-secondary">Cancelar</a>
+</form>

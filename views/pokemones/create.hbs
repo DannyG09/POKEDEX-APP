@@ -1,0 +1,29 @@
+<h2>Nuevo Pokémon</h2>
+<form method="POST" action="/pokemones/create">
+  <div class="mb-3">
+    <label>Nombre:</label>
+    <input name="nombre" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Imagen (URL):</label>
+    <input name="imagen" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Región:</label>
+    <select name="RegionId" class="form-control" required>
+      {{#each regiones}}
+        <option value="{{this.id}}">{{this.nombre}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Tipo:</label>
+    <select name="TipoId" class="form-control" required>
+      {{#each tipos}}
+        <option value="{{this.id}}">{{this.nombre}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="btn btn-primary">Crear</button>
+  <a href="/pokemones" class="btn btn-secondary">Cancelar</a>
+</form>

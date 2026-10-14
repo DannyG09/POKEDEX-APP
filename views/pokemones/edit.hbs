@@ -1,0 +1,29 @@
+<h2>Editar Pokémon</h2>
+<form method="POST" action="/pokemones/edit/{{pokemon.id}}">
+  <div class="mb-3">
+    <label>Nombre:</label>
+    <input name="nombre" class="form-control" value="{{pokemon.nombre}}" required>
+  </div>
+  <div class="mb-3">
+    <label>Imagen (URL):</label>
+    <input name="imagen" class="form-control" value="{{pokemon.imagen}}" required>
+  </div>
+  <div class="mb-3">
+    <label>Región:</label>
+    <select name="RegionId" class="form-control" required>
+      {{#each regiones}}
+        <option value="{{this.id}}" {{#ifCond this.id '==' ../pokemon.RegionId}}selected{{/ifCond}}>{{this.nombre}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Tipo:</label>
+    <select name="TipoId" class="form-control" required>
+      {{#each tipos}}
+        <option value="{{this.id}}" {{#ifCond this.id '==' ../pokemon.TipoId}}selected{{/ifCond}}>{{this.nombre}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="btn btn-primary">Guardar</button>
+  <a href="/pokemones" class="btn btn-secondary">Cancelar</a>
+</form>
